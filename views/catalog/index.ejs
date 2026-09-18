@@ -1,0 +1,48 @@
+<%- include('../partials/head', { title }) %>
+<%- include('../partials/navbar') %>
+
+<main class="container py-5">
+  <div class="d-flex justify-content-between align-items-end gap-3 mb-4">
+    <div>
+      <span class="badge text-bg-primary mb-2">Katalog</span>
+      <h1 class="h2 m-0">Daftar Anime</h1>
+      <p class="m-0 text-muted">Temukan berbagai anime menarik di sini.</p>
+    </div>
+
+    <span class="badge rounded-pill text-bg-dark">
+      <% if (animeList && animeList.length > 0) { %>
+        <%= animeList.length %> Anime ditemukan
+      <% } else { %>
+        Tidak ada anime yang ditemukan
+      <% } %>
+    </span>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+    <% if (animeList && animeList.length > 0) { %>
+      <% animeList.forEach((anime) => { %>
+        <div class="col">
+          <div class="card h-100 position-relative">
+            <img
+              src="<%= anime.poster_url || 'https://placehold.co/600x900?text=Anime' %>"
+              class="card-img-top"
+              alt="<%= anime.title %>"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x900?text=Anime';"
+            >
+            <div class="card-body">
+              <h5 class="card-title"><%= anime.title %></h5>
+              <p class="card-text"><%= anime.genre %></p>
+            </div>
+            <span class="badge text-bg-primary position-absolute top-0 end-0 m-2"><%= anime.status %></span>
+          </div>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <div class="col-12">
+        <p class="text-muted">Tidak ada anime yang tersedia saat ini.</p>
+      </div>
+    <% } %>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

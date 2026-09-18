@@ -1,0 +1,31 @@
+<%- include('partials/head', { title}) %>
+<%- include('partials/navbar') %>
+
+<main class="container mt-4">
+    <div class="p-4 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Welcome to <%= appName %>!</h1>
+            <p class="col-md-8 fs-4">This is a simple streaming platform where you can watch your favorite anime shows.</p>
+            <a href="/catalog" class="btn btn-primary btn-lg">Browse Anime</a>
+        </div>
+    </div>
+
+    <section id="roadmap" class="row g-3 mt-3">
+        <div class="col-md-4">
+            <h2>Latest Releases</h2>
+            <p>Check out the latest anime episodes that have been released.</p>
+            <a href="/catalog" class="btn btn-secondary">View Latest</a>
+        </div>
+        <div class="col-md-4">
+            <h2>Popular Anime</h2>
+            <p>Discover the most popular anime shows among our users.</p>
+            <a href="/catalog" class="btn btn-secondary">View Popular</a>
+        </div>
+        <div class="col-md-4">
+            <h2>Genres</h2>
+            <p>Explore anime by different genres and find your next favorite show.</p>
+            <a href="/catalog" class="btn btn-secondary">View Genres</a>
+        </div>
+    </section>
+</main>
+<%- include('partials/footer') %>

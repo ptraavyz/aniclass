@@ -1,0 +1,12 @@
+<%- include('partials/head', { title }) %>
+<%- include('partials/navbar') %>
+
+<main class="container py-5">
+  <div class="alert alert-danger" role="alert">
+    <h1 class="h3 mb-3">Terjadi Kesalahan</h1>
+    <p class="mb-3"><%= message %></p>
+    <a href="/" class="btn btn-primary">Kembali ke Beranda</a>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
