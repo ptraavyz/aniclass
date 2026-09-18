@@ -32,8 +32,10 @@
             <div class="card-body">
               <h5 class="card-title"><%= anime.title %></h5>
               <p class="card-text"><%= anime.genre %></p>
+              <p class="card-text "><small class="text-muted"><%= anime.synopsis %></small></p>
             </div>
             <span class="badge text-bg-primary position-absolute top-0 end-0 m-2"><%= anime.status %></span>
+
           </div>
         </div>
       <% }); %>
